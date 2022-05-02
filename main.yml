@@ -1,0 +1,50 @@
+name: github pages
+
+# Controls when the action will run. 
+on:
+   # Triggers the workflow on push event but only for the main branch
+   push:
+      branches: [ main ]
+
+   # Allows you to run this workflow manually from the Actions tab
+   workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+   # This workflow contains a single job called "build"
+   build:
+      name: Build and deploy GitHub Pages
+      # The type of runner that the job will run on
+      runs-on: ubuntu-18.04
+
+      # Steps represent a sequence of tasks that will be executed as part of the job
+      steps:
+         # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+         - uses: actions/checkout@v2
+           with:
+              submodules: true  # Fetch Hugo themes (true OR recursive)
+              fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+         - name: Setup Hugo
+           uses: peaceiris/actions-hugo@v2
+           with:
+              hugo-version: '0.82.0'
+              # extended: true
+
+         - name: Build
+           run: hugo --minify
+
+         - name: Deploy
+           run: |
+              cd ./public
+              echo '${YOUR_DOMAIN}' >> CNAME
+              git init
+              git config --local user.name ${YOUR_USER_NAME}
+              git config --local user.email ${YOUR_USER_EMAIL}
+              git status
+              git remote add origin https://${{secrets.DEPLOY_GITHUB_PAGE_SECRET}}@github.com/${YOUR_USER_NAME}/${YOUR_USER_NAME}.github.io.git
+              git checkout -b main
+              git add --all
+              git commit -m "Deploy to GitHub Pages by GitHub Actions"
+              git push origin main -f
+              echo 🤘 Deploy to GitHub Pages completed.              
