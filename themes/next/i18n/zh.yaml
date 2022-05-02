@@ -1,34 +1,34 @@
 - id: StatsCats
-  translation: 目前共计 {{ len .Data.Terms }} 个分类
+  translation: 目前共計 {{ len .Data.Terms }} 個分類
 - id: StatsTags
-  translation: 目前共计 {{ len .Data.Terms }} 个标签
+  translation: 目前共計 {{ len .Data.Terms }} 個標籤
 - id: StatsBlogs
-  translation: 目前共计 {{ .Count }} 篇日志。 继续努力。
+  translation: 目前共計 {{ .Count }} 篇文章。 繼續努力。
 - id: Blog
-  translation: 日志
+  translation: 文章
 - id: Category
-  translation: 分类
+  translation: 分類
 - id: Archive
-  translation: 归档 
+  translation: 歸檔 
 - id: Tag
-  translation: 标签
+  translation: 標籤
 - id: ToC
-  translation: 文章目录
+  translation: 目錄
 - id: RSS
-  translation: "RSS 订阅"
+  translation: "RSS 訂閱"
 - id: SiteInfo
-  translation: 站点概览
+  translation: 網站概覽
 - id: Link
-  translation: 友情链接
+  translation: 友站連結
 - id: Time
-  translation: 时间 
+  translation: 時間 
 - id: View
-  translation: 阅读 
+  translation: 閱讀 
 - id: ReadMore
-  translation: 阅读全文
+  translation: 閱讀全文
 - id: ReadingTime
-  translation: "{{ .WordCount }} 字 ~{{ .ReadingTime }}分钟"
+  translation: "{{ .WordCount }} 字 ~{{ .ReadingTime }}分鐘"
 - id: Colon
   translation: "：" 
 - id: Search
-  translation: "搜索" 
+  translation: "搜尋" 

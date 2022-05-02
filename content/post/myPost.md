@@ -6,7 +6,7 @@ categories:
 tags:
 - "Rust"
 - "Programing"
-toc: true
+toc: false
 ---
 
 # Net 基礎觀念
