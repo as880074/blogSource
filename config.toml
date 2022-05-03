@@ -39,6 +39,11 @@ disqusShortname  = "nickchi"
 [Params.Share]
   #DuoShuo = "lanlingzi"
   #Baidu = true
+  
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
 
 [Params.utterances]  # https://utteranc.es/
   owner = ""         # Your GitHub ID

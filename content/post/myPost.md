@@ -6,6 +6,9 @@ categories:
 tags:
 - "Rust"
 - "Programing"
+keywords:
+  - "關鍵詞1"
+  - "關鍵詞2"
 toc: false
 ---
 

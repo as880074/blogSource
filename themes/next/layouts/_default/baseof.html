@@ -1,10 +1,15 @@
 {{ partial "head.html" . }}
+
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <div class="container one-collumn sidebar-position-left {{ block "main_class" .}}{{end}}  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <meta content="{{ delimit .Keywords ", " }}" name="keywords">
       <div class="header-inner"> {{ partial "header.html" . }} </div>
+      {{ if not .Site.IsServer }}
+        {{ template "_internal/google_analytics_async.html" . }}
+      {{ end }}
     </header>
 
     <main id="main" class="main">
